@@ -1,4 +1,7 @@
 from math import sqrt
+lines = open("berlin52.txt","r").readlines()[1:]
+for i in range(len(lines)):
+    lines[i]=lines[i].rstrip().split()
 def greedytrasa(lines):
     startx = int(lines[0][1])
     starty = int(lines[0][2])
@@ -26,3 +29,5 @@ def greedytrasa(lines):
     d = sqrt((x - startx) ** 2 + (y - starty) ** 2)
     dlugosc +=d
     return round(dlugosc, 2) , tab
+
+print(greedytrasa(lines))
